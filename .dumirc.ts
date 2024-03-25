@@ -18,5 +18,6 @@ export default defineConfig({
     footer: `Copyright © ${dayjs().format('YYYY')} | Powered by <a>hongmei.mao</a>`,
   },
   base: `${baseUrl}/`,
+  // 相对地址
   publicPath: `${baseUrl}/`,
 })
