@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.pro.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "fe-toolkit": ["./packages/utils/src/index.ts"],
+      "fe-toolkit/lib/*": ["./packages/utils/src/*"]
+    }
+  }
+}

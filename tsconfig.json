@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "strict": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "strictNullChecks": true,
+    "importHelpers": true,
+    "paths": {
+      "@@/*": [".dumi/tmp/*"]
+    }
+  },
+  "include": [".dumirc.ts", "node_modules", "lib", "es", "dist"]
+}
