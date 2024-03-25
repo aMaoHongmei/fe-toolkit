@@ -1,6 +1,6 @@
 # fe-toolkit
 
-预览 [fe-toolkit](https://aMaoHongmei.github.io/).
+预览 [fe-toolkit](https://amaohongmei.github.io/fe-toolkit-doc/).
 
 ## 功能
 
