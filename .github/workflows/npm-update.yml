@@ -23,21 +23,21 @@ jobs:
 
       - name: Set user info
         run: |
-          git config user.name "hongmei.mao"
-          git config user.email "hongmei.mao@qq.com"
+          git config user.name ${{ secrets.USER_NAME }}
+          git config user.email ${{ secrets.USER_EMAIL }}
 
       - name: Version bump and Publish to npm
         run: |
           cd packages/utils
           npm version patch -m "Version bumped to %s" && npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit and push changes
         run: |
-          git config --local user.email "hongmei.mao@qq.com"
-          git config --local user.name "hongmei.mao"
+          git config --local user.email ${{ secrets.USER_EMAIL }}
+          git config --local user.name ${{ secrets.USER_NAME }}
           git commit -m "Update version"
-          git push
+          git push origin master
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
