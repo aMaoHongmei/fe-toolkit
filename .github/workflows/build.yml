@@ -24,6 +24,11 @@ jobs:
         run: |
           git clone https://aMaoHongmei:${{ secrets.API_TOKEN_GITHUB }}@github.com/aMaoHongmei/fe-toolkit-doc.git destination_repo
 
+      - name: Backup all files in the repository
+        run: |
+         mkdir backup
+         cp -r destination_repo/* backup/
+
       - name: Remove all files from the repository
         run: |
           cd destination_repo
