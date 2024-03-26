@@ -26,13 +26,10 @@ jobs:
           git config user.name "hongmei.mao"
           git config user.email "hongmei.mao@qq.com"
 
-      - name: Version bump
-        run: npm version patch -m "Version bumped to %s"
-
-      - name: Publish to npm
+      - name: Version bump and Publish to npm
         run: |
           cd packages/utils
-          npm publish
+          npm version patch -m "Version bumped to %s" && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
