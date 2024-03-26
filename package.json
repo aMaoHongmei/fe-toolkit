@@ -1,6 +1,6 @@
 {
   "name": "fe-toolkit",
-  "version": "0.0.1",
+  "version": "0.0.16",
   "license": "MIT",
   "scripts": {
     "build": "pnpm -r --filter=./packages/* run build",
