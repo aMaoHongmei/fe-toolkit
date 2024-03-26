@@ -20,6 +20,23 @@ jobs:
       - name: Build
         run: npm run build:doc
 
+      - name: Clone destination repository
+        run: |
+          git clone https://aMaoHongmei:${{ secrets.API_TOKEN_GITHUB }}@github.com/aMaoHongmei/fe-toolkit-doc.git destination_repo
+
+      - name: Remove all files from the repository
+        run: |
+          cd destination_repo
+          git rm -r *
+
+      - name: Commit and push changes
+        run: |
+          cd destination_repo
+          git config --local user.email ${{ secrets.USER_EMAIL }}
+          git config --local user.name "aMaoHongmei"
+          git commit -m "Remove all files"
+          git push origin master
+
       - name: Push to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
