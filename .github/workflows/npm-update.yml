@@ -19,6 +19,11 @@ jobs:
     - name: Install dependencies
       run: npm i
 
+    - name: Set user info
+    run: |
+      git config user.name "hongmei.mao"
+      git config user.email "hongmei.mao@qq.com"
+
     - name: Version bump
       run: npm version patch -m "Version bumped to %s"
 
@@ -29,6 +34,6 @@ jobs:
 
     - name: Push changes
       run: |
-        git config --local user.email "871863224@qq.com"
+        git config --local user.email ${{ secrets.USER_EMAIL }}
         git config --local user.name "aMaoHongmei"
         git push
