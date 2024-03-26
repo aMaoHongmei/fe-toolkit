@@ -34,7 +34,7 @@ jobs:
           cd packages/utils
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.API_TOKEN_GITHUB}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Push changes
         run: |
