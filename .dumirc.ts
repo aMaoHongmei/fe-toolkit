@@ -17,6 +17,7 @@ export default defineConfig({
     name: 'fe-toolkit',
     footer: `Copyright © ${dayjs().format('YYYY')} | Powered by <a>hongmei.mao</a>`,
   },
+
   base: `${baseUrl}/`,
   publicPath: `${baseUrl}/`,
 })
