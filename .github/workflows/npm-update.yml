@@ -1,0 +1,34 @@
+name: Node.js Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install dependencies
+      run: npm i
+
+    - name: Version bump
+      run: npm version patch -m "Version bumped to %s"
+
+    - name: Publish to npm
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.API_TOKEN_GITHUB}}
+
+    - name: Push changes
+      run: |
+        git config --local user.email "871863224@qq.com"
+        git config --local user.name "aMaoHongmei"
+        git push
