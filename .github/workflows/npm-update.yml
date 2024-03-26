@@ -33,8 +33,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
-      - name: Push changes
+      - name: Commit and push changes
         run: |
-          git config --local user.email ${{ secrets.USER_EMAIL }}
-          git config --local user.name "aMaoHongmei"
+          git config --local user.email "hongmei.mao@qq.com"
+          git config --local user.name "hongmei.mao"
+          git commit -m "Update version"
           git push
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
