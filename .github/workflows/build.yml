@@ -26,5 +26,5 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: 'dist'
-          destination-github-username: 'MaoHongmei'
-          destination-repository: 'git@github.com:aMaoHongmei/fe-toolkit-doc.git'
+          destination-github-username: 'aMaoHongmei'
+          destination-repository: 'fe-toolkit-doc'
